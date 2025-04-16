@@ -4,7 +4,7 @@ import { Request, Response } from "express";
 import { User } from "../models/user";
 
 export const getAllUsers = async (_req: Request, res: Response) => {
-  // callback = =>
+
   try {
     const users = await User.find();
 

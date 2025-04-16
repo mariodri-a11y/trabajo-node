@@ -20,16 +20,4 @@ app.get("/", (_req: Request, res: Response) => {
   res.redirect("/api-docs");
 });
 
-// expressOasGenerator.handleResponses(app, {
-//   mongooseModels: ["User", "Rol"],
-//   tags: ["auth", "user"],
-//   swaggerDocumentOptions: {
-//     info: { title: "Game Lobby API", version: "1.0.0" },
-//   },
-
-//   specOutputFileBehavior: "PRESERVE",
-// });
-
-// expressOasGenerator.handleRequests();
-
 export default app;

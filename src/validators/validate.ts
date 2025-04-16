@@ -59,7 +59,7 @@ export async function checkPassword(
 
   userFound: any
 ) {
-  const matchPassword = await bcrypt.compare(password, userFound.password); //userFound.password es la contraseña encriptada
+  const matchPassword = await bcrypt.compare(password, userFound.password);
 
   if (!matchPassword)
     return res.status(401).json({ message: "Invalid password" });

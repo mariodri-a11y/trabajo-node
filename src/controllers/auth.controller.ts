@@ -23,7 +23,7 @@ async function registerUser(req: Request, res: Response) {
   const newUser = new User(req.body);
   newUser.password = await bcrypt.hash(newUser.password, 10);
   await newUser.save();
-  //aqui se puede meter que cree el token y lo devuelva
+
   return res.status(201).json({ message: `${newUser}` });
 }
 

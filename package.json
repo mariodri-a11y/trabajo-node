@@ -12,6 +12,7 @@
   "description": "",
   "dependencies": {
     "@types/express": "^4.17.21",
+    "applicationinsights": "^3.6.0",
     "bcrypt": "^5.1.1",
     "colorette": "^2.0.20",
     "cors": "^2.8.5",

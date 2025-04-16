@@ -28,8 +28,6 @@ async function createModels() {
 
     console.log(green("Creating models..."));
 
-    //cada linea va a hacer crear la conexion de las tablas de la base de datos que sean padres(users)
-
     await User.createCollection();
     console.log(cyan("Models created"));
   } catch (error: any) {
