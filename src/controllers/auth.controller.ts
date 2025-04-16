@@ -16,8 +16,6 @@ import {
 import { User } from "../models/user";
 
 import {
-  createCheackoutSession,
-  getCustomerSuscriptionByEmail,
   getUserByEmailOrUsername,
 } from "../utils/utils";
 
@@ -38,17 +36,7 @@ export const signup = async (req: Request, res: Response) => {
   if (handleValidatePassword(password, res)) return;
 
   try {
-    if (rol === "admin") {
-      const session = await createCheackoutSession(email);
-      const customerSuscription = await getCustomerSuscriptionByEmail(email);
-      if (customerSuscription) {
-        await registerUser(req, res);
-      }
-
-      return res.status(200).json({ url: session.url });
-    } else {
-      await registerUser(req, res);
-    }
+    await registerUser(req, res);
   } catch (error: any) {
     handleValidationErrors(error, res);
   }

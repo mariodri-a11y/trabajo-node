@@ -13,11 +13,17 @@ export async function connectDB() {
       appName: APP_NAME,
       dbName: DB_NAME,
     });
-    console.log(
-      magenta(`MongoDB connected to database ${connection.db?.databaseName || "unknown"}`)
-    );
+
+    if (connection.db) {
+      console.log(
+        magenta(`MongoDB connected to database ${connection.db.databaseName}`)
+      );
+    } else {
+      console.log(red("MongoDB connection established, but database is undefined."));
+    }
+
     await createDatabase();
   } catch (error: any) {
-    console.log(red(`Can't connect to the databaseName:${error.message}`));
+    console.log(red(`Can't connect to the database: ${error.message}`));
   }
 }
