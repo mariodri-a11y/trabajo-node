@@ -1,9 +1,12 @@
 import mongoose from "mongoose";
 import { magenta, red } from "colorette";
 
-//local imports
+// Local imports
 import { APP_NAME, DB_NAME, DB_STRING } from "./config";
 import { createDatabase } from "./utils/utils";
+
+// Configurar strictQuery para evitar la advertencia
+mongoose.set("strictQuery", true); // Cambia a false si prefieres permitir campos no definidos
 
 const connection = mongoose.connection;
 
